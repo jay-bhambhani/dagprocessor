@@ -25,9 +25,14 @@ repositories {
 	mavenCentral()
 }
 
+tasks.withType(ScalaCompile) {
+	scalaCompileOptions.useAnt = false}
+
 
 dependencies {
 	compile('org.springframework.boot:spring-boot-starter')
+	compile('org.scala-lang:scala-library:2.11.7')
+	compile('com.typesafe.akka:akka-actor_2.10:2.1.0')
 	testCompile('org.springframework.boot:spring-boot-starter-test') 
 }
 
